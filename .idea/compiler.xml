@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="webdriver_java" />
         <module name="greenkart" />
-        <module name="homework_rahulshetty_practicepage" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="homework_rahulshetty_practicepage" target="18" />
+      <module name="webdriver_java" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>
