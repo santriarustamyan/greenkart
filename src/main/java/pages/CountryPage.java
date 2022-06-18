@@ -7,14 +7,13 @@ import org.testng.Assert;
 public class CountryPage {
 
     private WebDriver driver;
-    private final By clickTermsAndConditionCheckbox = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]");
-    private final By clickProceedButton = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]");
-    private final By successMessageIsShow = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]");
-    private final String expectedSuccessMessage = "Thank you, your order has been placed successfully\n" +
-            "You'll be redirected to Home page shortly!!";
+    private final By clickTermsAndConditionCheckbox = By.cssSelector("input.chkAgree");
+    private final By clickProceedButton = By.cssSelector(".wrapperTwo button");
+
     public CountryPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public void checkTermsAndConditions(){
         driver.findElement(clickTermsAndConditionCheckbox).click();
     }
@@ -23,8 +22,5 @@ public class CountryPage {
         driver.findElement(clickProceedButton).click();
     }
 
-    public void setSuccessMessageIsShow(){
-        String actualSuccessMessage = driver.findElement( successMessageIsShow).getText();
-        Assert.assertEquals( actualSuccessMessage, expectedSuccessMessage);
-    }
+
 }
